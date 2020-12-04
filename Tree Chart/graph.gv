@@ -1,0 +1,58 @@
+digraph G {
+{rank=same; "Marketing\ncommunication"; "Study fairs\nand ehibitions"; "Int. Degree\nStudents";"Transition to\nfaculty"; "Visa";"Admission"; "Nostrification"; "Entry\nexamination"; "Study readiness\ncheck";}
+rankdir="LR";
+
+     "Study at CTU" -> "Marketing\ncommunication";
+     "Marketing\ncommunication" -> "Social Media\nCampaings" -> "Social Media\nAnalysis" -> "First\nContact" -> "Promote Czech\nRepublic";
+     "Study at CTU" -> "Study fairs\nand ehibitions";
+     "Study fairs\nand ehibitions" -> "Communication\nwith prospective\nstudents";
+     "Study at CTU" -> "Int. Degree\nStudents";
+     "Int. Degree\nStudents" -> "Admissions" -> "Faculties\nInformation" -> "Important\nDocumentation" -> "Life at\nCTU" -> "Cost of\nliving";
+     "Study at CTU" -> "Transition to\nfaculty";
+     "Transition to\nfaculty" -> "Faculty advisor\norienting\ncandidate";
+     "Study at CTU" -> "Visa";
+     "Study at CTU" -> "Admission";
+     "Admission" -> "Application" -> "Submission";
+     "Study at CTU" -> "Nostrification";
+     "Study at CTU" -> "Entry\nexamination";
+     "Entry\nexamination" -> "Information" -> "Preparation" -> "Exam\nOrganization";
+     "Study at CTU" -> "Study readiness\ncheck";
+     "Study readiness\ncheck" -> "Course\nRegistration" -> "Orientation week";
+
+     "Visa" -> "Study\nAdvisor" [style=bold, color=blue, label="95%"];
+     "Visa" -> "Study\nDepartment" [style=bold, color=yellow, label="5%"];
+     "Orientation week" -> "Faculty\nAdvisor" [style=bold, color=green, label="90%"];
+     "Orientation week" -> "Study\nAdvisor" [style=bold, color=blue, label="10%"];
+     "Communication\nwith prospective\nstudents" -> "CTU\nAmbassadors" [style=bold, color=red];
+     "Exam\nOrganization" -> "Faculty\nAdvisor" [style=bold, color=green];
+     "Cost of\nliving" -> "CTU\nAmbassadors" [style=bold, color=red, label="80%"];
+     "Cost of\nliving" -> "Faculty\nAdvisor" [style=bold, color=green, label="20%"];
+     "Nostrification" -> "Faculty\nAdvisor" [style=bold, color=green];
+     "Submission" -> "Faculty\nAdvisor" [style=bold, color=green, label="90%"] ;
+     "Submission" -> "Study\nAdvisor" [style=bold, color=blue, label="10%"] ;
+     "Faculty advisor\norienting\ncandidate" -> "CTU\nAmbassadors" [style=bold, color=red];
+     "Promote Czech\nRepublic" -> "CTU\nAmbassadors" [style=bold, color=red];
+
+"Study at CTU" [style=filled, color="SteelBlue", nodesep=0.75];
+"Marketing\ncommunication" [style=filled, color="MediumAquamarine", nodesep=0.75];
+"Study fairs\nand ehibitions" [style=filled, color="MediumAquamarine", nodesep=0.75];
+"Int. Degree\nStudents" [style=filled, color="MediumAquamarine", nodesep=0.75];
+"Transition to\nfaculty" [style=filled, color="MediumAquamarine", nodesep=0.75];
+"Visa" [style=filled, color="MediumAquamarine", nodesep=0.75];
+"Admission" [style=filled, color="MediumAquamarine", nodesep=0.75];
+"Nostrification" [style=filled, color="MediumAquamarine", nodesep=0.75];
+"Entry\nexamination" [style=filled, color="MediumAquamarine", nodesep=0.75];
+"Study readiness\ncheck" [style=filled, color="MediumAquamarine", nodesep=0.75];
+
+"CTU\nAmbassadors" [style=filled, color="LightCoral"];
+"Faculty\nAdvisor" [style=filled, color="LightGreen"];
+"Study\nAdvisor" [style=filled, color="LightBlue"];
+"Study\nDepartment" [style=filled, color="Yellow2"];
+
+
+}
+
+##compile with: dot -Tsvg graph.gv -o graphH.svg
+##change font: sed 's/Times,serif/Helvetica/g' graphH.svg > graphH_helvetica.svg
+
+

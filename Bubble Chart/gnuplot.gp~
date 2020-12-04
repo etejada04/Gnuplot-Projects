@@ -1,0 +1,22 @@
+#!/usr/bin/gnuplot
+reset
+set terminal png font "arial,12" fontscale 1.0 size 640,480
+
+set xdata time
+set timefmt "%Y/%m/%d %H:%M:%S"
+set format x "%j\n%H"
+set xlabel "Day of year and hour of day of first submission"
+
+set ylabel "success rate"
+set yrange [0:1]
+
+set title "Students of TED"
+set cblabel "No of submissions" 
+set cbrange [0:20]
+set pm3d; set palette rgb 7,5;
+set grid
+
+set style data line
+
+plot "data.txt" using 1:3:(sqrt(($4)*(2)**22)) with circles title ""
+#

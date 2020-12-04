@@ -1,0 +1,14 @@
+#!/usr/bin/gnuplot
+reset
+set terminal svg size 350,262 fname 'Verdana' fsize 10
+
+set xlabel '{/Helvetica-Oblique x}'
+set ylabel '{/Helvetica-Oblique y}'
+set xtics ('-2{/Symbol p}' -2*pi,'-{/Symbol p}' -pi,0, \
+       '{/Symbol p}' pi,'2{/Symbol p}' 2*pi)
+set title "Cosine Function"
+
+set style data linespoints
+
+plot cos(x) title ""
+#
